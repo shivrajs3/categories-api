@@ -5,7 +5,6 @@ import io.restassured.response.Response;
 import nz.assurity.categories.common.BaseTestConfig;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
-//import org.junit.jupiter.api.Test;
 import org.junit.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.runner.RunWith;
@@ -27,18 +26,8 @@ public class CategoriesAPIFunctionalTest  extends BaseTestConfig {
 
     @Before
     public void initialize() throws IOException {
-        setUp();
         getCategoryDetailsByCategoryID();
     }
-    /**
-     * Call the GET/Categories by Id endpoint and check response status and content
-     *
-     * @return access by spec
-     * Status Code- 200
-     * Name = "Carbon credits"
-     * CanRelist = true
-     * The Promotions element with Name = "Gallery" has a Description that contains the text "2x larger image"
-     */
 
     private void getCategoryDetailsByCategoryID(){
         response = given().headers("Content-Type", ContentType.JSON, "Accept", ContentType.JSON).
@@ -49,16 +38,37 @@ public class CategoriesAPIFunctionalTest  extends BaseTestConfig {
                 .extract().response();
     }
 
+    /**
+     * Call the GET/Categories by Id endpoint and check response status and content
+     *
+     * @return access by spec
+     * Status Code- 200
+     * Name = "Carbon credits"
+     */
     @Test
     public void getCategory_Details_By_CategoryId_Category_Name_ShouldBe_Correct() throws Exception {
         Assertions.assertEquals(response.body().path("Name"), expectedName);
     }
 
+    /**
+     * Call the GET/Categories by Id endpoint and check response status and content
+     *
+     * @return access by spec
+     * Status Code- 200
+     * CanRelist = true
+     */
     @Test
     public void getCategory_Details_By_CategoryId_CanReList_Should_Be_True() throws Exception {
         Assertions.assertEquals(response.body().path("CanRelist"), expectedCanRelist);
     }
 
+    /**
+     * Call the GET/Categories by Id endpoint and check response status and content
+     *
+     * @return access by spec
+     * Status Code- 200
+     * The Promotions element with Name = "Gallery" has a Description that contains the text "2x larger image"
+     */
     @Test
     public void getCategory_Details_By_CategoryId_Description_Should_Be_Correct() throws Exception {
         validatePromotions(response.body().path("Promotions"));

@@ -2,23 +2,16 @@ package nz.assurity.categories.E2Etests;
 
 import io.restassured.http.ContentType;
 import nz.assurity.categories.common.BaseTestConfig;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
 
 @RunWith(SpringRunner.class)
 public class CategoriesAPIEnd2EndTest extends BaseTestConfig {
 
-    @Before
-    public void initialize() throws IOException {
-        setUp();
-    }
     /**
      * Call the GET/Categories by Id endpoint and check response 200 status
      *

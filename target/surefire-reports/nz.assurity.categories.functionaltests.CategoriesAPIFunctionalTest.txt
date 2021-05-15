@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: nz.assurity.categories.functionaltests.CategoriesAPIFunctionalTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 4.443 s <<< FAILURE! - in nz.assurity.categories.functionaltests.CategoriesAPIFunctionalTest
+getCategory_Details_By_CategoryId_Description_Should_Be_Correct  Time elapsed: 0.284 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <Good position in category> but was: <2x larger image>
+	at nz.assurity.categories.functionaltests.CategoriesAPIFunctionalTest.lambda$validatePromotions$1(CategoriesAPIFunctionalTest.java:140)
+	at nz.assurity.categories.functionaltests.CategoriesAPIFunctionalTest.validatePromotions(CategoriesAPIFunctionalTest.java:139)
+	at nz.assurity.categories.functionaltests.CategoriesAPIFunctionalTest.getCategory_Details_By_CategoryId_Description_Should_Be_Correct(CategoriesAPIFunctionalTest.java:74)
+
