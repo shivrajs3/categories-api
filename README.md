@@ -8,8 +8,8 @@ To run these tests, you need following softwares installed on your laptop
 - Maven
 
 Note: You can use chocolatey (windows package manager) to install these above software
-       - choco install java
-       - choco install maven
+* choco install java
+* choco install maven
 
 To install chocolatey, refer - https://chocolatey.org/install
 
